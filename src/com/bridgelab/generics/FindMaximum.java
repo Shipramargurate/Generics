@@ -2,20 +2,20 @@ package com.bridgelab.generics;
 
 public class FindMaximum {
 
-	/*
-	 * UC2 - Find maximum in given three String
-	 */
-	public String checkMaximum(String X, String Y, String Z) {
+	public  <E extends Comparable<E>> E maximum(E x, E y, E z) {
 		
-		String max = X;
-		if(Y.compareTo(max) > 0) {
-			max = Y;
+		E max = x; 	// assuming x as largest initially
+		if(y.compareTo(max) > 0) {
+			max = y;
 		}
-		else if(Z.compareTo(max) > 0) {
-			max = Z;
+		if(z.compareTo(max) > 0) {
+			max = z;
 		}
-		System.out.println(max);
+		System.out.println("Values are : " + x +" "+ y +" "+ z);
+		System.out.println("The Max of 3 Values : " + max);
 		return max;
 	}
+	
+	
 	
 }
